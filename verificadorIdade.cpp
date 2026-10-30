@@ -4,6 +4,7 @@ int main(){
   int idade;
   std::string descricao;
   do{
+    std::cout<<"Digite a sua idade:"<<std::endl;
     std::cin>>idade;
 
     if(std::cin.fail()){
