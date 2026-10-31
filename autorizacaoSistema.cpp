@@ -21,6 +21,12 @@ std::vector <int> validadorEntrada(std::vector <std::string> lista){
       }
       else{
         if(entradaUsuario >= 0){
+          if(entradaUsuario > 1 && lista[i] == "Status usuário (1 - Sim) / (0 - Não)"){
+            std::cout<<"====================================="<<std::endl;
+            std::cout<<"Valor maior do que o Permitido"<<std::endl;
+            std::cout<<"====================================="<<std::endl;
+            continue;
+          }
           vetorUsuario.push_back(entradaUsuario);
           break;
         }
@@ -40,9 +46,9 @@ int main(){
   const char* statusTexto = std::getenv("USUARIO_ATIVO");
   std::vector <int> dadosUsuario;
   std::vector <std::string> etapaAtual = {"Código de acesso","Status usuário (1 - Sim) / (0 - Não)"};
-  int senha, status;
+  int senha, status, tentativasLogin = 0;
   bool logout = false;
-
+  
   if(senhaTexto != nullptr && statusTexto != nullptr){
     senha = std::atoi(senhaTexto);
     status = std::atoi(statusTexto);
@@ -59,7 +65,12 @@ int main(){
       logout = true;
     }
     else{
+      tentativasLogin++;
       std::cout<<"Senha ou status não encontrado!"<<std::endl;
+      if(tentativasLogin == 3){
+        std::cout<<"Máximo de tentativas permitidas!"<<std::endl;
+        break;
+      }
     }  
   }
   return 0;
