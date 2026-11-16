@@ -23,7 +23,7 @@ void exibirMenu();
 
 void cadastrarProduto();
 void listarProdutos();
-int pesquisarProduto(int codigoPesquisa);
+void pesquisarProduto(int codigoPesquisa);
 
 void entradaEstoque();
 void realizarVenda();

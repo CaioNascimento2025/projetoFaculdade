@@ -6,30 +6,27 @@ int main()
 
     do
     {
-//        exibirMenu();
+        exibirMenu();
         cin >> opcao;
 
         switch (opcao)
         {
             case 1:
-                //cadastrarProduto();
+                cadastrarProduto();
                 break;
 
             case 2:
-                //listarProdutos();
+                listarProdutos();
                 break;
 
             case 3:
             {
                 int codigoPesquisa;
 
-                cout << "Codigo: ";
+                cout << "Digite o Codigo do Produto: ";
                 cin >> codigoPesquisa;
 
-                //int posicao = pesquisarProduto(codigoPesquisa);
-
-                //if (posicao == -1)
-                    cout << "Produto nao encontrado!\n";
+                pesquisarProduto(codigoPesquisa);
 
                 break;
             }
