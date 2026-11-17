@@ -6,8 +6,8 @@ void entradaEstoque()
     int quantidadeEntrada;
     bool encontrado = false;
     int posicao = -1;
-    cout << "Codigo do produto: ";
-    cin >> codigoBusca;
+    
+    codigoBusca = validarInteiro(exibirMenu,"Código do Produto: ");
 
     for(int i = 0; i<totalProdutos; i++){
       if(codigoBusca == codigo[i]){
@@ -23,8 +23,8 @@ void entradaEstoque()
         return;
     }
     if(encontrado && posicao >= 0){
-      cout << "Quantidade recebida: ";
-      cin >> quantidadeEntrada;
+  
+      quantidadeEntrada = validarInteiro(exibirMenu,"Quantidade recebida: ");
 
       if (quantidadeEntrada <= 0)
       {   cout<<"=================================="<<endl;
@@ -46,10 +46,10 @@ void realizarVenda()
     int quantidadeVenda;
     int posicao = -1;
 
-    cout << "\n===== REGISTRAR VENDA =====\n";
+    string texto1 = "\n===== REGISTRAR VENDA =====\n";
 
-    cout << "Codigo do produto: ";
-    cin >> codigoBusca;
+    string texto2 =  "Código do Produto";
+    codigoBusca = validarInteiro(exibirMenu,(texto1 + texto2));
 
     // Localizar produto
     for(int i = 0; i < totalProdutos; i++){
@@ -72,8 +72,7 @@ void realizarVenda()
     cout << "Preco unitario: R$ " << preco[posicao] << endl;
     cout << "Estoque atual: " << quantidade[posicao] << endl;
 
-    cout << "\nQuantidade vendida: ";
-    cin >> quantidadeVenda;
+    quantidadeVenda = validarInteiro(exibirMenu,"Quantidade Vendida");
 
     // Validar quantidade
     if (quantidadeVenda <= 0)

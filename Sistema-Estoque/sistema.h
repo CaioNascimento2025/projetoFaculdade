@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -29,6 +30,9 @@ void entradaEstoque();
 void realizarVenda();
 
 void gerarRelatorio();
+
+int validarInteiro(void (*funcao)(), string mensagem);
+double validarDouble(void (*funcao)(), string mensagem);
 
 #endif
 

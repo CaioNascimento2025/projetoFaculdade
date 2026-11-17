@@ -6,8 +6,7 @@ int main()
 
     do
     {
-        exibirMenu();
-        cin >> opcao;
+        opcao = validarInteiro(exibirMenu," ");
 
         switch (opcao)
         {
@@ -23,8 +22,7 @@ int main()
             {
                 int codigoPesquisa;
 
-                cout << "Digite o Codigo do Produto: ";
-                cin >> codigoPesquisa;
+                codigoPesquisa = validarInteiro(exibirMenu,"Digite o Código do Produto: ");
 
                 pesquisarProduto(codigoPesquisa);
 

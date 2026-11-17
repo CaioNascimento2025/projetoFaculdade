@@ -16,17 +16,15 @@ void cadastrarProduto(){
     return;
   }
   else{
-    cout<<"Digite o Código do Produto"<<endl;
-    cin>>codigo[totalProdutos];
-
+    codigo[totalProdutos] = validarInteiro(exibirMenu,"Digite o Código do Produto: ");
+    
+    cout<<endl;
     cout<<"Digite o Nome do Produto"<<endl;
     cin>>nome[totalProdutos];
+   
+    preco[totalProdutos] = validarDouble(exibirMenu,"Digite o Preço do Produto: ");
 
-    cout<<"Digite O Preço do Produto"<<endl;
-    cin>>preco[totalProdutos];
-
-    cout<<"Digite a quantidade do produto";
-    cin>>quantidade[totalProdutos];
+    quantidade[totalProdutos] = validarInteiro(exibirMenu,"Digite a Quantidade do Produto: ");
     
     totalProdutos++;
   }
@@ -44,7 +42,7 @@ void listarProdutos(){
   else{
     cout<<"Código          Nome          Preço          Quantidade"<<endl;
     for(int i =0 ; i < totalProdutos; i++){
-      cout<<codigo[i]<<"          "<<nome[i]<<"          "<<preco[i]<<"          "<<"          "<<quantidade[i]<<endl;
+      cout<<codigo[i]<<"          "<<nome[i]<<"          "<<fixed<<setprecision(2)<<preco[i]<<"          "<<"          "<<quantidade[i]<<endl;
     }
   }
 

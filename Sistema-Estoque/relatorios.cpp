@@ -1,22 +1,20 @@
 #include "sistema.h"
 #include <iomanip>
 
-void exibirMenu(){
-  cout<<"========================================================="<<endl;
-  cout<<"             ESTOQUE DE PRODUTOS                         "<<endl;
-  cout<<"========================================================="<<endl;
-  cout<<endl<<endl;
+void exibirMenu()
+{
+    cout << "============================\n";
+    cout << "     ESTOQUE DE PRODUTOS\n";
+    cout << "============================\n";
 
-  cout<<"1 - Cadastrar Produto"<<endl;
-  cout<<"2 - Listar Produtos"<<endl;
-  cout<<"3 - Pesquisar Produto"<<endl;
-  cout<<"4 - Registrar Entrada no Estoque"<<endl;
-  cout<<"5 - Registrar Venda"<<endl;
-  cout<<"6 - Relatório do Estoque"<<endl;
-  cout<<"0 - Sair"<<endl;
-
+    cout << "1 - Cadastrar Produto\n";
+    cout << "2 - Listar Produtos\n";
+    cout << "3 - Pesquisar Produto\n";
+    cout << "4 - Entrada no Estoque\n";
+    cout << "5 - Registrar Venda\n";
+    cout << "6 - Relatorio\n";
+    cout << "0 - Sair\n";
 }
-
 
 void gerarRelatorio()
 {
