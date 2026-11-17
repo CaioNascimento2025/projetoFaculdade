@@ -16,7 +16,6 @@ void cadastrarProduto(){
     return;
   }
   else{
-    cout<<totalProdutos;
     cout<<"Digite o Código do Produto"<<endl;
     cin>>codigo[totalProdutos];
 

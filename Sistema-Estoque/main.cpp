@@ -32,15 +32,15 @@ int main()
             }
 
             case 4:
-                //entradaEstoque();
+                entradaEstoque();
                 break;
 
             case 5:
-                //realizarVenda();
+                realizarVenda();
                 break;
 
             case 6:
-                //gerarRelatorio();
+                gerarRelatorio();
                 break;
 
             case 0:
