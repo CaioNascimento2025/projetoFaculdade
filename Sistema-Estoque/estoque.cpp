@@ -69,7 +69,7 @@ void realizarVenda()
     }
 
     cout << "Produto: " << nome[posicao] << endl;
-    cout << "Preco unitario: R$ " << preco[posicao] << endl;
+    cout << "Preco unitario: R$ "<<fixed<<setprecision(2) << preco[posicao] << endl;
     cout << "Estoque atual: " << quantidade[posicao] << endl;
 
     quantidadeVenda = validarInteiro(exibirMenu,"Quantidade Vendida");
@@ -94,8 +94,8 @@ void realizarVenda()
         cout <<endl<< "===== VENDA REALIZADA ====="<<endl;
         cout << "Produto: " << nome[posicao] << endl;
         cout << "Quantidade: " << quantidadeVenda << endl;
-        cout << "Valor unitario: R$ " << preco[posicao] << endl;
-        cout << "Total: R$ " << total << endl;
+        cout << "Valor unitario: R$ " <<fixed<<setprecision(2)<< preco[posicao] << endl;
+        cout << "Total: R$ " <<fixed<<setprecision(2)<< total << endl;
         cout << "Estoque restante: " << quantidade[posicao] << endl;
     }
     else

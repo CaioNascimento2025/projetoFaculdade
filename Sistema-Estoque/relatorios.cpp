@@ -72,7 +72,7 @@ void gerarRelatorio()
          << totalUnidades << endl;
 
     cout << "Valor total do estoque: R$ "
-         << valorEstoque << endl;
+         <<fixed<<setprecision(2)<< valorEstoque << endl;
 
     cout << "Produto com maior estoque: "
          << nome[maiorEstoque]
