@@ -9,7 +9,6 @@ int quantidade[LIMITE];
 
 int totalProdutos = 0;
 
-
 void cadastrarProduto(){
   if(totalProdutos >= 50){
     cout<<"==========================="<<endl;
@@ -74,20 +73,57 @@ void cadastrarProduto(){
   }
 }
 
-void listarProdutos(){
-  if(totalProdutos >= 50){
-    cout<<"================================="<<endl;
-    cout<<"     ERRO! quantidade de produtos inválida"<<endl;
-    cout<<"================================="<<endl;
-    return;
-  }
-  else{
-    cout<<"Código          Nome          Preço          Quantidade"<<endl;
-    for(int i =0 ; i < totalProdutos; i++){
-      cout<<codigo[i]<<"          "<<nome[i]<<"          "<<fixed<<setprecision(2)<<preco[i]<<"          "<<"          "<<quantidade[i]<<endl;
-    }
-  }
 
+  
+
+void listarProdutos(){
+
+    if(totalProdutos == 0){
+        cout << "Nenhum produto cadastrado!" << endl;
+        return;
+    }
+
+    // Tamanhos mínimos dos cabeçalhos
+    int maiorCodigo = 6;
+    int maiorNome = 4;
+    int maiorPreco = 5;
+    int maiorQuantidade = 10;
+
+    // Descobrir o maior tamanho de cada coluna
+    for(int i = 0; i < totalProdutos; i++){
+
+        maiorCodigo = max(maiorCodigo,
+                          (int)to_string(codigo[i]).length());
+
+        maiorNome = max(maiorNome,
+                        (int)nome[i].length());
+
+        string valorPreco = to_string(preco[i]);
+        maiorPreco = max(maiorPreco,
+                         (int)valorPreco.substr(0, valorPreco.find('.') + 3).length());
+
+        maiorQuantidade = max(maiorQuantidade,
+                              (int)to_string(quantidade[i]).length());
+    }
+
+    // Cabeçalho
+    cout << left
+         << setw(maiorCodigo + 6) << "Código"
+         << setw(maiorNome + 4) << "Nome"
+         << setw(maiorPreco + 5) << "Preço"
+         << setw(maiorQuantidade + 9) << "Quantidade"
+         << endl;
+
+    // Produtos
+    for(int i = 0; i < totalProdutos; i++){
+
+        cout << left
+             << setw(maiorCodigo + 6) << codigo[i]
+             << setw(maiorNome + 4) << nome[i]
+             << setw(maiorPreco + 5) << fixed << setprecision(2) << preco[i]
+             << setw(maiorQuantidade + 9) << quantidade[i]
+             << endl;
+    }
 }
 
 
